@@ -15,8 +15,8 @@ body {
   padding-right: 20px;
   background-color: rgb(76, 100, 121);
 }
-.nav-bar h1{
-    width:300.44px;
+.nav-bar h1 {
+  width: 300.44px;
 }
 .nav-bar ul,
 li,
@@ -123,11 +123,12 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-right: 70px;
   }
   .nav-bar h1 {
     font-size: 20px;
     padding-left: 40px;
-    width:auto
+    width: auto;
   }
   .main-content {
     display: flex;

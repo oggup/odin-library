@@ -124,5 +124,12 @@ a {
   /* .nav-bar li {
     font-size: 20px;
   } */
-  .nav-bar h1{font-size: 20px;
-padding-left: 40px;}
+  .nav-bar h1 {
+    font-size: 20px;
+    padding-left: 40px;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+}

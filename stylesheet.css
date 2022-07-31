@@ -1,0 +1,20 @@
+body {
+  background-color: aliceblue;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.book-container {
+  display: grid;
+  grid-template-columns: 0.5fr;
+  justify-content: center;
+  background: rgb(138, 138, 180);
+}
+.book-card {
+  border: 2px groove steelblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  color: antiquewhite;
+  font-weight: 900;
+}

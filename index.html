@@ -16,7 +16,29 @@
             <li><a href="#">Login</a></li>
         </ul></div>
     </div>
-  <div class="main-content"> <div class="main-left"><p class="main-title">Book's</p> <div class="book-container"></div></div><div class="main-right"><div class="trending"><p class="main-title">Trending</p></div></div></div>
+    <div class="main-content">
+        <div class="main-left">
+            <p class="main-title">Book's</p>
+            
+            <div class="book-container">
+                <div class="add-card"><p class="add">+</p><div>Add Card</div></div>
+                
+                <div class="book-card"><div class="card-title">${book-title}</div>
+                <div class="card-info">
+                    <div class="object-property-value"><div class="property">Author:</div><div class="value"> ${book.author}</div></div>
+                    <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
+                    <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.date}</div></div>
+                </div>
+                <div class="card-buttons"><button class="">1</button><button class="">2</button><button class="">3</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-right">
+            <div class="trending">
+                <p class="main-title">Trending</p>
+            </div>
+        </div>
+    </div>
     <div class="footer">Skinny Thot Inc</div>
-  </body>
+</body>
 </html>

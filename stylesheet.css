@@ -64,7 +64,7 @@ a {
   font-weight: 900;
   color: rgb(169, 127, 127);
   background-color: antiquewhite;
-  border: 2px gsolid rgb(226, 229, 232);
+  border: 2px solid rgb(226, 229, 232);
   border-radius: 15px;
   height: 300px;
 }
@@ -77,6 +77,13 @@ a {
   align-items: center;
   justify-content: center;
   height: 300px;
+  transition: all 0.07s;
+}
+.active {
+  transform: scale(1, 1);
+  box-shadow: 0 0 10px #f6f0db;
+  border: 1px solid rgb(255, 253, 250);
+  background: rgba(255, 254, 254, 0.1);
 }
 .add-card:hover {
   cursor: pointer;

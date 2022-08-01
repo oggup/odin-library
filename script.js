@@ -22,12 +22,15 @@ function addBookToLibrary(book) {
   document.querySelector(".book-container").appendChild(div);
 
   console.log(book.title, book.author, book.pages, book.year);
-
 }
 
-
-
-
+document.querySelector(".add-card").addEventListener("click", (e) => {
+    document.querySelector(".add-card").classList.add("active");
+  });
+  document.querySelector(".add-card").addEventListener("transitionend", (e) => {
+    document.querySelector(".add-card").classList.remove("active");
+  });
+  
 
 addBookToLibrary(rakkBook);
 addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));

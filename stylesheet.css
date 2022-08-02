@@ -31,11 +31,39 @@ a {
 }
 
 /* MAIN CONTENT */
+
+/*form container pop up*/
+
+.form-container {
+  position: fixed;
+  top:40%;
+  Left: 50%;
+  transform: translate(-50%, -50%);
+width: 400px;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  border-radius: 10px;;
+}
+fieldset{
+    height:400px;
+
+}
+
+.book-inputs{
+    display: flex;
+    justify-content:space-between;
+}
 .main-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: rgb(211, 216, 219);
-  background: rgb(138, 138, 180);
+  background: url(https://www.artsheaven.com/wp-content/uploads/2019/09/edmond-francois-aman-jean-GIRL-READING.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .main-title {
   padding-left: 15px;

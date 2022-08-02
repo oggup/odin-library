@@ -11,7 +11,7 @@ function addBookToLibrary(book) {
   bookList.push(book);
   let div = document.createElement("div");
   div.classList.add("book-card");
-  div.innerHTML = `<div class="card-title">${book.title}</div>
+  div.innerHTML = `<div class="title-container"><div class="card-title">${book.title}</div></div>
   <div class="card-info">
       <div class="object-property-value"><div class="property">Author:</div><div class="value"> ${book.author}</div></div>
       <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
@@ -25,16 +25,14 @@ function addBookToLibrary(book) {
 }
 
 document.querySelector(".add-card").addEventListener("click", (e) => {
-    document.querySelector(".add-card").classList.add("active");
-  });
-  document.querySelector(".add-card").addEventListener("transitionend", (e) => {
-    document.querySelector(".add-card").classList.remove("active");
-  });
-  
+  document.querySelector(".add-card").classList.add("active");
+});
+document.querySelector(".add-card").addEventListener("transitionend", (e) => {
+  document.querySelector(".add-card").classList.remove("active");
+});
 
 addBookToLibrary(rakkBook);
 addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));
 addBookToLibrary(
   new Book("Sleepless in Montana: A Memoir", "Aaron Jonson", 782, 2022)
 );
-

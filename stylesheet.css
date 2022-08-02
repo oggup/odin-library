@@ -36,34 +36,32 @@ a {
 
 .form-container {
   position: fixed;
-  top:40%;
-  Left: 50%;
+  top: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
-width: 400px;
-  height: 50vh;
+  width: 400px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:white;
-  border-radius: 10px;;
+  background-color: white;
+  border-radius: 10px;
 }
-fieldset{
-    height:400px;
-
+fieldset {
+  height: 400px;
 }
 
-.book-inputs{
-    display: flex;
-    justify-content:space-between;
+.book-inputs {
+  display: flex;
+  justify-content: space-between;
 }
 .main-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: rgb(211, 216, 219);
-  background: url(https://www.artsheaven.com/wp-content/uploads/2019/09/edmond-francois-aman-jean-GIRL-READING.jpg)
-    no-repeat;
+  background: url(bg.jpg) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top right;
 }
 .main-title {
   padding-left: 15px;
@@ -88,16 +86,17 @@ fieldset{
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr 1fr;
   align-items: center;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   font-weight: 900;
-  color: rgb(169, 127, 127);
-  background-color: antiquewhite;
-  border: 2px solid rgb(226, 229, 232);
+  color: rgb(255, 255, 255);
+  background-color: rgba(17, 45, 184, 0.5);
+  border: 1px solid rgb(226, 229, 232);
   border-radius: 15px;
   height: 300px;
 }
 .add-card {
   border: solid 1px white;
+  background-color: rgb(255, 255, 255, 0.2);
   border-radius: 10px;
   color: white;
   display: flex;
@@ -120,12 +119,21 @@ fieldset{
   font-size: 5rem;
   font-weight: 900;
 }
-.card-title {
+.title-container{
   grid-column: 1/3;
-  color: rgb(147, 30, 30);
+  color: rgb(183, 135, 135);
+  font-size: 1.3em;
+  background-color: rgba(32, 46, 112, 0.9);
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .card-info {
   grid-column: 1/3;
+  padding-left:10px;
+}
+.card-title{
+    padding-left:10px;padding-top:20px;
 }
 .card-buttons {
   grid-column: 2/3;
@@ -146,7 +154,7 @@ fieldset{
 
 /* FOOTER */
 .footer {
-  background-color: rgb(67, 69, 137);
+  background-color: rgb(74, 37, 6);
   color: rgb(235, 235, 235);
   display: flex;
   justify-content: center;

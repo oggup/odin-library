@@ -17,8 +17,8 @@
         </ul></div>
     </div>
     <div class="main-content">
-        <div class="delete-container"><h2>Are you sure you want to delete your book entry?</h2>
-        <div class="options"><button>Yes</button><button>No</button></div></div>
+        <div class="delete-container hide"><h2>Are you sure you want to delete your book entry?</h2>
+        <div class="options"><button class="yes-button">Yes</button><button class="no-button">No</button></div></div>
         <div class="form-container hide">
              <form action="#"  id="new-book-form">
                 <fieldset>
@@ -64,7 +64,7 @@
                     <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
                     <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.date}</div></div>
                 </div>
-                <div class="card-buttons"><img src="/edit.png" alt="edit"><img src="/delete.png" alt="delete"></div>
+                <div class="card-buttons"><img class="edit-button"src="/edit.png" alt="edit"><img class="delete-button"src="/delete.png" alt="delete"></div>
                 </div>
             </div>
         </div>

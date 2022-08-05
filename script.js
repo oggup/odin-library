@@ -16,13 +16,13 @@ function addBookToLibrary(book) {
       <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
       <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.year}</div></div>
   </div>
-  <div class="card-buttons"><img src="/edit.png" alt="edit"><img src="/delete.png" alt="delete"></div>
+  <div class="card-buttons"><img class="edit-button"src="/edit.png" alt="edit"><img class="delete-button"src="/delete.png" alt="delete"></div>
     `;
   document.querySelector(".book-container").appendChild(div);
 
   console.log(book.title, book.author, book.pages, book.year);
 }
-
+//ADD CARD BUTTON
 document.querySelector(".add-card").addEventListener("click", (e) => {
   document.querySelector(".add-card").classList.add("active");
   document.querySelector(".form-container").classList.remove("hide");
@@ -38,8 +38,13 @@ addBookToLibrary(
   new Book("Sleepless in Montana: A Memoir", "Aaron Jonson", 782, 2022)
 );
 
-let newBookForm = document.querySelector("#new-book-form");
+//DELETE BUTTON ON CARD
+document.querySelector(".delete-button").addEventListener("click", () => {
+  document.querySelector(".delete-container").classList.remove("hide");
+});
 
+let newBookForm = document.querySelector("#new-book-form");
+//SUBMIT BUTTON ON FORM CONTAINER
 newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   let form = document.querySelector(".form-container");

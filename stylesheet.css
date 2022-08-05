@@ -48,35 +48,37 @@ a {
   border-radius: 10px;
   backdrop-filter: blur(10px);
 }
-fieldset {display:flex;
+fieldset {
+  display: flex;
   flex-direction: column;
   height: 200px;
 }
 
-
-fieldset input{
+fieldset input {
   border-radius: 3px;
-  border:1px solid rgb(46, 39, 139);
-  margin:5px;
+  border: 1px solid rgb(46, 39, 139);
+  margin: 5px;
 }
 
-.button-section{
-  display:flex;
-  justify-content:flex-end;
+.button-section {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 20px;
 }
-.button-section input{
+.button-section input {
   background: white;
-  border:1px solid rgb(46, 39, 139);
+  border: 1px solid rgb(46, 39, 139);
 }
 
 .book-inputs {
   display: flex;
   justify-content: space-between;
-
-
 }
 
+.delete-button:hover,
+.edit-button:hover {
+  cursor: pointer;
+}
 
 .delete-container {
   position: fixed;
@@ -95,7 +97,6 @@ fieldset input{
 .hide {
   display: none;
 }
-
 
 .main-content {
   grid-column: 1/4;

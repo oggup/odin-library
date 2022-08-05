@@ -1,3 +1,10 @@
+let newBookForm = document.querySelector("#new-book-form");
+let formContainer = document.querySelector(".form-container");
+let deleteButton = document.querySelector(".delete-button");
+let deleteContainer = document.querySelector(".delete-container");
+let noButton = document.querySelector(".no-button");
+let addCard = document.querySelector(".add-card");
+
 function Book(title, author, pages, year, read) {
   this.title = title;
   this.author = author;
@@ -23,12 +30,12 @@ function addBookToLibrary(book) {
   console.log(book.title, book.author, book.pages, book.year);
 }
 //ADD CARD BUTTON
-document.querySelector(".add-card").addEventListener("click", (e) => {
-  document.querySelector(".add-card").classList.add("active");
-  document.querySelector(".form-container").classList.remove("hide");
+addCard.addEventListener("click", (e) => {
+  addCard.classList.add("active");
+  formContainer.classList.remove("hide");
 });
-document.querySelector(".add-card").addEventListener("transitionend", (e) => {
-  document.querySelector(".add-card").classList.remove("active");
+addCard.addEventListener("transitionend", (e) => {
+  addCard.classList.remove("active");
 });
 
 let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
@@ -39,16 +46,15 @@ addBookToLibrary(
 );
 
 //DELETE BUTTON ON CARD
-document.querySelector(".delete-button").addEventListener("click", () => {
-  document.querySelector(".delete-container").classList.remove("hide");;
+deleteButton.addEventListener("click", () => {
+  deleteContainer.classList.remove("hide");
 });
 
-
-document.querySelector(".no-button").addEventListener(".click", () => {
+noButton.addEventListener(".click", () => {
   console.log("NO");
   // document.querySelector(".delete-container").classList.add("hide");
 });
-let newBookForm = document.querySelector("#new-book-form");
+
 //SUBMIT BUTTON ON FORM CONTAINER
 newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();

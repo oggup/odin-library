@@ -40,9 +40,14 @@ addBookToLibrary(
 
 //DELETE BUTTON ON CARD
 document.querySelector(".delete-button").addEventListener("click", () => {
-  document.querySelector(".delete-container").classList.remove("hide");
+  document.querySelector(".delete-container").classList.remove("hide");;
 });
 
+
+document.querySelector(".no-button").addEventListener(".click", () => {
+  console.log("NO");
+  // document.querySelector(".delete-container").classList.add("hide");
+});
 let newBookForm = document.querySelector("#new-book-form");
 //SUBMIT BUTTON ON FORM CONTAINER
 newBookForm.addEventListener("submit", (event) => {

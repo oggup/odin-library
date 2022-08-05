@@ -50,9 +50,9 @@ deleteButton.addEventListener("click", () => {
   deleteContainer.classList.remove("hide");
 });
 
-noButton.addEventListener(".click", () => {
+noButton.addEventListener("click", () => {
   console.log("NO");
-  // document.querySelector(".delete-container").classList.add("hide");
+  document.querySelector(".delete-container").classList.add("hide");
 });
 
 //SUBMIT BUTTON ON FORM CONTAINER

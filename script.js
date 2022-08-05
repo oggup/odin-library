@@ -4,7 +4,9 @@ let deleteButton = document.querySelector(".delete-button");
 let deleteContainer = document.querySelector(".delete-container");
 let noButton = document.querySelector(".no-button");
 let addCard = document.querySelector(".add-card");
+let formCloseButton = document.querySelector(".x-button");
 
+//NEW BOOK CONSTRUCTOR
 function Book(title, author, pages, year, read) {
   this.title = title;
   this.author = author;
@@ -13,6 +15,7 @@ function Book(title, author, pages, year, read) {
 }
 let bookList = [];
 
+//ADD BOOK TO LIBRARY
 function addBookToLibrary(book) {
   bookList.push(book);
   let div = document.createElement("div");
@@ -29,6 +32,11 @@ function addBookToLibrary(book) {
 
   console.log(book.title, book.author, book.pages, book.year);
 }
+
+//FORM X BUTTON BUTTON
+formCloseButton.addEventListener("click", () => {
+  formContainer.classList.add("hide");
+});
 //ADD CARD BUTTON
 addCard.addEventListener("click", (e) => {
   addCard.classList.add("active");
@@ -37,7 +45,7 @@ addCard.addEventListener("click", (e) => {
 addCard.addEventListener("transitionend", (e) => {
   addCard.classList.remove("active");
 });
-
+//INITIAL DUMMY CONTENT
 let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
 addBookToLibrary(rakkBook);
 addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));

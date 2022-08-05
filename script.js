@@ -1,6 +1,5 @@
 let newBookForm = document.querySelector("#new-book-form");
 let formContainer = document.querySelector(".form-container");
-let deleteButton = document.querySelector(".delete-button");
 let deleteContainer = document.querySelector(".delete-container");
 let noButton = document.querySelector(".no-button");
 let addCard = document.querySelector(".add-card");
@@ -54,8 +53,10 @@ addBookToLibrary(
 );
 
 //DELETE BUTTON ON CARD
-deleteButton.addEventListener("click", () => {
-  deleteContainer.classList.remove("hide");
+document.querySelectorAll(".delete-button").forEach((button)=>{
+  button.addEventListener("click", () => {
+    deleteContainer.classList.remove("hide");
+  })
 });
 
 noButton.addEventListener("click", () => {

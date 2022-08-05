@@ -26,6 +26,7 @@ function addBookToLibrary(book) {
 
 document.querySelector(".add-card").addEventListener("click", (e) => {
   document.querySelector(".add-card").classList.add("active");
+  document.querySelector(".form-container").classList.remove('hide');
 });
 document.querySelector(".add-card").addEventListener("transitionend", (e) => {
   document.querySelector(".add-card").classList.remove("active");
@@ -36,3 +37,11 @@ addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));
 addBookToLibrary(
   new Book("Sleepless in Montana: A Memoir", "Aaron Jonson", 782, 2022)
 );
+
+
+let newBookForm = document.querySelector("#new-book-form");
+let bookData= new FormData(newBookForm);
+
+
+newBookForm.addEventListener("submit", ()=>{
+    console.log(bookData);});

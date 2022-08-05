@@ -47,6 +47,9 @@ a {
   background-color: white;
   border-radius: 10px;
 }
+.hide {
+  display: none;
+}
 fieldset {
   height: 400px;
 }

@@ -40,11 +40,20 @@ addBookToLibrary(
 
 let newBookForm = document.querySelector("#new-book-form");
 
-newBookForm.addEventListener("submit", () => {
+newBookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let form = document.querySelector(".form-container");
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
   let year = document.querySelector("#year").value;
-
+  addBookToLibrary(new Book(title, author, pages, year));
+  title = "";
+  form.classList.add("hide");
+  let inputFields=form.querySelectorAll(".input-field")
+  for(i=0; i<inputFields.length; i++){
+    inputFields[i].value=""
+  }
+  form.reset();
   console.log(title, author, pages, year);
 });

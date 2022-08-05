@@ -59,6 +59,7 @@ fieldset {
   justify-content: space-between;
 }
 .main-content {
+  grid-column:1/4;
   display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: rgb(211, 216, 219);
@@ -145,6 +146,9 @@ fieldset {
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
+}
+.card-buttons img{
+  height:30px
 }
 .object-property-value {
   display: grid;

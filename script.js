@@ -16,7 +16,7 @@ function addBookToLibrary(book) {
       <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
       <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.year}</div></div>
   </div>
-  <div class="card-buttons"><button class="">1</button><button class="">2</button><button class="">3</button></div>
+  <div class="card-buttons"><img src="/edit.png" alt="edit"><img src="/delete.png" alt="delete"></div>
     `;
   document.querySelector(".book-container").appendChild(div);
 

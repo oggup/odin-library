@@ -75,7 +75,7 @@ fieldset {
 /* LEFT */
 .book-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   grid-template-rows: repeat(auto-fit, minmax(300px, 0.5fr));
   justify-content: center;
   gap: 15px;
@@ -159,6 +159,7 @@ fieldset {
 
 /* FOOTER */
 .footer {
+  grid-column: 1/4;
   background-color: rgb(74, 37, 6);
   color: rgb(235, 235, 235);
   display: flex;

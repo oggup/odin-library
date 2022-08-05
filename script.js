@@ -6,7 +6,6 @@ function Book(title, author, pages, year, read) {
 }
 let bookList = [];
 
-let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
 function addBookToLibrary(book) {
   bookList.push(book);
   let div = document.createElement("div");
@@ -32,6 +31,7 @@ document.querySelector(".add-card").addEventListener("transitionend", (e) => {
   document.querySelector(".add-card").classList.remove("active");
 });
 
+let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
 addBookToLibrary(rakkBook);
 addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));
 addBookToLibrary(
@@ -50,9 +50,9 @@ newBookForm.addEventListener("submit", (event) => {
   addBookToLibrary(new Book(title, author, pages, year));
   title = "";
   form.classList.add("hide");
-  let inputFields=form.querySelectorAll(".input-field")
-  for(i=0; i<inputFields.length; i++){
-    inputFields[i].value=""
+  let inputFields = form.querySelectorAll(".input-field");
+  for (i = 0; i < inputFields.length; i++) {
+    inputFields[i].value = "";
   }
   form.reset();
   console.log(title, author, pages, year);

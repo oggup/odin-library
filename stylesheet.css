@@ -58,6 +58,7 @@ fieldset input {
   border-radius: 3px;
   border: 1px solid rgb(46, 39, 139);
   margin: 5px;
+  color:rgb(46, 39, 139);
 }
 .x-button {
   height: 30px;

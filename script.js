@@ -2,7 +2,7 @@ let newBookForm = document.querySelector("#new-book-form");
 let formContainer = document.querySelector(".form-container");
 let deleteContainer = document.querySelector(".delete-container");
 let noButton = document.querySelector(".no-button");
-let yesButton= document.querySelector(".yes-button");
+let yesButton = document.querySelector(".yes-button");
 let addCard = document.querySelector(".add-card");
 let formCloseButton = document.querySelector(".x-button");
 
@@ -17,7 +17,7 @@ let bookList = [];
 
 //ADD BOOK TO LIBRARY
 function addBookToLibrary(book) {
-  bookList.push(book);
+  bookList.unshift(book);
   let div = document.createElement("div");
   div.classList.add("book-card");
   div.innerHTML = `<div class="title-container"><div class="card-title">${book.title}</div></div>
@@ -39,15 +39,21 @@ function addBookToLibrary(book) {
   deleteButton.classList.add("delete-button");
   deleteButton.addEventListener("click", () => {
     console.log("DELETE ME");
+
     deleteContainer.classList.remove("hide");
   });
   buttonsDiv.classList.add("card-buttons");
   buttonsDiv.appendChild(editButton);
   buttonsDiv.appendChild(deleteButton);
   div.appendChild(buttonsDiv);
-  document.querySelector(".book-container").appendChild(div);
+  document.querySelector(".book-container div:first-child").after(div);
 
-  console.log(book.title, book.author, book.pages, book.year);
+  document.querySelectorAll(".book-card").forEach((book, index) => {
+    book.setAttribute(`id`, index);
+  });
+  document.querySelectorAll(".card-buttons").forEach((buttons, index) => {
+    buttons.setAttribute("id", index);
+  });
 }
 
 //FORM X BUTTON BUTTON
@@ -74,6 +80,7 @@ addBookToLibrary(
 document.querySelectorAll(".delete-button").forEach((button) => {
   button.addEventListener("click", () => {
     deleteContainer.classList.remove("hide");
+    console.log(this);
   });
 });
 //NO BUTTON ON DELETE CONTAINER
@@ -84,9 +91,9 @@ noButton.addEventListener("click", () => {
 //YES BUTTON ON DELETE container
 
 yesButton.addEventListener("click", () => {
-  console.log("YES DELETE THIS BOOK")
+  console.log("YES DELETE THIS BOOK");
   document.querySelector(".delete-container").classList.add("hide");
-})
+});
 //SUBMIT BUTTON ON FORM CONTAINER
 newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();

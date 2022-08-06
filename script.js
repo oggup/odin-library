@@ -5,6 +5,15 @@ let noButton = document.querySelector(".no-button");
 let yesButton = document.querySelector(".yes-button");
 let addCard = document.querySelector(".add-card");
 let formCloseButton = document.querySelector(".x-button");
+let bookId;
+
+//INITIAL DUMMY CONTENT
+let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
+addBookToLibrary(rakkBook);
+addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));
+addBookToLibrary(
+  new Book("Sleepless in Montana: A Memoir", "Aaron Jonson", 782, 2022)
+);
 
 //NEW BOOK CONSTRUCTOR
 function Book(title, author, pages, year, read) {
@@ -12,6 +21,7 @@ function Book(title, author, pages, year, read) {
   this.author = author;
   this.pages = pages;
   this.year = year;
+  this.id = Math.floor(Math.random() * 1000);
 }
 let bookList = [];
 
@@ -79,6 +89,7 @@ function addBookToLibrary(book) {
   let editButton = document.createElement("img");
   editButton.classList.add("edit-button");
   editButton.setAttribute("src", "edit.png");
+  editButton.setAttribute("bookId", `${book.id}`);
   editButton.addEventListener("click", () => {
     console.log("EDIT ME");
   });
@@ -86,14 +97,17 @@ function addBookToLibrary(book) {
   let deleteButton = document.createElement("img");
   deleteButton.classList.add("delete-button");
   deleteButton.setAttribute("src", "delete.png");
+  deleteButton.setAttribute("bookId", `${book.id}`);
   deleteButton.addEventListener("click", () => {
-    console.log("DELETE ME", this);
-
+    bookId = book.id;
+    console.log("DELETE ME", bookId);
     deleteContainer.classList.remove("hide");
   });
 
   buttonsDiv.appendChild(editButton);
   buttonsDiv.appendChild(deleteButton);
+
+  bookCard.setAttribute("id", `${book.id}`);
 
   bookCard.appendChild(titleSection);
   cardInfo.appendChild(authorSection);
@@ -104,14 +118,6 @@ function addBookToLibrary(book) {
   document.querySelector(".book-container div:first-child").after(bookCard);
 }
 
-document.querySelectorAll(".delete-button").forEach((yesButton, index) => {
-  yesButton.setAttribute("id", index);
-});
-
-//FORM X BUTTON BUTTON
-formCloseButton.addEventListener("click", () => {
-  formContainer.classList.add("hide");
-});
 //ADD CARD BUTTON
 addCard.addEventListener("click", (e) => {
   addCard.classList.add("active");
@@ -120,30 +126,19 @@ addCard.addEventListener("click", (e) => {
 addCard.addEventListener("transitionend", (e) => {
   addCard.classList.remove("active");
 });
-//INITIAL DUMMY CONTENT
-let rakkBook = new Book("Rakk's Struggle", "Marcello Fitton", 232, 1993);
-addBookToLibrary(rakkBook);
-addBookToLibrary(new Book("Top Ten Legumes", "Papaya", 200, 2004));
-addBookToLibrary(
-  new Book("Sleepless in Montana: A Memoir", "Aaron Jonson", 782, 2022)
-);
 
-//DELETE BUTTON ON CARD
-document.querySelectorAll(".delete-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    deleteContainer.classList.remove("hide");
-    console.log(this);
-  });
-});
 //NO BUTTON ON DELETE CONTAINER
-noButton.addEventListener("click", () => {
-  console.log("NO", this);
+noButton.addEventListener("click", (e) => {
+  console.log("NO", bookId);
   document.querySelector(".delete-container").classList.add("hide");
 });
 //YES BUTTON ON DELETE container
 
 yesButton.addEventListener("click", () => {
-  console.log("YES DELETE THIS BOOK", this);
+  console.log("YES DELETE THIS BOOK", bookId);
+  let elementedToBeDeleted = document.getElementById(`${bookId}`);
+  elementedToBeDeleted.remove();
+  console.log(elementedToBeDeleted);
   document.querySelector(".delete-container").classList.add("hide");
 });
 //SUBMIT BUTTON ON FORM CONTAINER
@@ -163,4 +158,8 @@ newBookForm.addEventListener("submit", (event) => {
   }
   form.reset();
   console.log(title, author, pages, year);
+});
+//FORM X BUTTON BUTTON
+formCloseButton.addEventListener("click", () => {
+  formContainer.classList.add("hide");
 });

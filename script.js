@@ -17,44 +17,96 @@ let bookList = [];
 
 //ADD BOOK TO LIBRARY
 function addBookToLibrary(book) {
-  bookList.unshift(book);
-  let div = document.createElement("div");
-  div.classList.add("book-card");
-  div.innerHTML = `<div class="title-container"><div class="card-title">${book.title}</div></div>
-  <div class="card-info">
-      <div class="object-property-value"><div class="property">Author:</div><div class="value"> ${book.author}</div></div>
-      <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
-      <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.year}</div></div>
-  </div>`;
-  document.querySelector(".book-container").appendChild(div);
+  let bookCard = document.createElement("div");
+  bookCard.classList.add("book-card");
+  //BOOK CARD CONTENT
+
+  //title
+  let titleSection = document.createElement("div");
+  titleSection.classList.add("title-container");
+  let cardTitle = document.createElement("div");
+  cardTitle.textContent = `${book.title}`;
+  cardTitle.classList.add("card-title");
+  titleSection.appendChild(cardTitle);
+
+  //CARD INFO
+  let cardInfo = document.createElement("div");
+  cardInfo.classList.add("card-info");
+
+  //author
+  let authorSection = document.createElement("div");
+  authorSection.classList.add("object-property-value");
+  let authorLeft = document.createElement("div");
+  authorLeft.classList.add("property");
+  authorLeft.textContent = "Author: ";
+  let authorRight = document.createElement("div");
+  authorRight.textContent = `${book.author}`;
+  authorRight.classList.add("value");
+
+  authorSection.appendChild(authorLeft);
+  authorSection.appendChild(authorRight);
+
+  //pages
+  let pagesSection = document.createElement("div");
+  pagesSection.classList.add("object-property-value");
+  let pagesLeft = document.createElement("div");
+  pagesLeft.textContent = "Pages: ";
+  pagesLeft.classList.add("property");
+  let pagesRight = document.createElement("div");
+  pagesRight.textContent = `${book.pages}`;
+  pagesRight.classList.add("value");
+
+  pagesSection.appendChild(pagesLeft);
+  pagesSection.appendChild(pagesRight);
+
+  //date
+  let dateSection = document.createElement("div");
+  dateSection.classList.add("object-property-value");
+  let dateLeft = document.createElement("div");
+  dateLeft.textContent = "Date: ";
+  dateLeft.classList.add("property");
+  let dateRight = document.createElement("div");
+  dateRight.textContent = `${book.year}`;
+  dateRight.classList.add("value");
+
+  dateSection.appendChild(dateLeft);
+  dateSection.appendChild(dateRight);
+
+  //BUTTONS
   let buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("card-buttons");
+  //edit
   let editButton = document.createElement("img");
-  let deleteButton = document.createElement("img");
-  editButton.setAttribute("src", "edit.png");
   editButton.classList.add("edit-button");
+  editButton.setAttribute("src", "edit.png");
   editButton.addEventListener("click", () => {
     console.log("EDIT ME");
   });
-  deleteButton.setAttribute("src", "delete.png");
+  //delete
+  let deleteButton = document.createElement("img");
   deleteButton.classList.add("delete-button");
+  deleteButton.setAttribute("src", "delete.png");
   deleteButton.addEventListener("click", () => {
-    console.log("DELETE ME");
+    console.log("DELETE ME", this);
 
     deleteContainer.classList.remove("hide");
   });
-  buttonsDiv.classList.add("card-buttons");
+
   buttonsDiv.appendChild(editButton);
   buttonsDiv.appendChild(deleteButton);
-  div.appendChild(buttonsDiv);
-  document.querySelector(".book-container div:first-child").after(div);
 
-  document.querySelectorAll(".book-card").forEach((book, index) => {
-    book.setAttribute(`id`, index);
-  });
-  document.querySelectorAll(".card-buttons").forEach((buttons, index) => {
-    buttons.setAttribute("id", index);
-  });
+  bookCard.appendChild(titleSection);
+  cardInfo.appendChild(authorSection);
+  cardInfo.appendChild(pagesSection);
+  cardInfo.appendChild(dateSection);
+  bookCard.appendChild(cardInfo);
+  bookCard.appendChild(buttonsDiv);
+  document.querySelector(".book-container div:first-child").after(bookCard);
 }
+
+document.querySelectorAll(".delete-button").forEach((yesButton, index) => {
+  yesButton.setAttribute("id", index);
+});
 
 //FORM X BUTTON BUTTON
 formCloseButton.addEventListener("click", () => {
@@ -85,13 +137,13 @@ document.querySelectorAll(".delete-button").forEach((button) => {
 });
 //NO BUTTON ON DELETE CONTAINER
 noButton.addEventListener("click", () => {
-  console.log("NO");
+  console.log("NO", this);
   document.querySelector(".delete-container").classList.add("hide");
 });
 //YES BUTTON ON DELETE container
 
 yesButton.addEventListener("click", () => {
-  console.log("YES DELETE THIS BOOK");
+  console.log("YES DELETE THIS BOOK", this);
   document.querySelector(".delete-container").classList.add("hide");
 });
 //SUBMIT BUTTON ON FORM CONTAINER

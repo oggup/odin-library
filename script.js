@@ -24,9 +24,26 @@ function addBookToLibrary(book) {
       <div class="object-property-value"><div class="property">Author:</div><div class="value"> ${book.author}</div></div>
       <div class="object-property-value"><div class="property">Pages:</div><div class="value"> ${book.pages}</div></div>
       <div class="object-property-value"><div class="property">Date Written:</div><div class="value"> ${book.year}</div></div>
-  </div>
-  <div class="card-buttons"><img class="edit-button"src="/edit.png" alt="edit"><img class="delete-button"src="/delete.png" alt="delete"></div>
-    `;
+  </div>`;
+  document.querySelector(".book-container").appendChild(div);
+  let buttonsDiv = document.createElement("div");
+  let editButton = document.createElement("img");
+  let deleteButton = document.createElement("img");
+  editButton.setAttribute("src", "edit.png");
+  editButton.classList.add("edit-button");
+  editButton.addEventListener("click",()=>{
+    console.log("EDIT ME")
+  })
+  deleteButton.setAttribute("src", "delete.png");
+  deleteButton.classList.add("delete-button")
+  deleteButton.addEventListener("click",()=>{
+    console.log("DELETE ME")
+    deleteContainer.classList.remove("hide");
+  })
+  buttonsDiv.classList.add("card-buttons");
+  buttonsDiv.appendChild(editButton);
+  buttonsDiv.appendChild(deleteButton);
+  div.appendChild(buttonsDiv);
   document.querySelector(".book-container").appendChild(div);
 
   console.log(book.title, book.author, book.pages, book.year);
@@ -53,10 +70,10 @@ addBookToLibrary(
 );
 
 //DELETE BUTTON ON CARD
-document.querySelectorAll(".delete-button").forEach((button)=>{
+document.querySelectorAll(".delete-button").forEach((button) => {
   button.addEventListener("click", () => {
     deleteContainer.classList.remove("hide");
-  })
+  });
 });
 
 noButton.addEventListener("click", () => {

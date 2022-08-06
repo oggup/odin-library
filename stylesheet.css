@@ -58,7 +58,7 @@ fieldset input {
   border-radius: 3px;
   border: 1px solid rgb(46, 39, 139);
   margin: 5px;
-  color:rgb(46, 39, 139);
+  color: rgb(46, 39, 139);
 }
 .x-button {
   height: 30px;
@@ -223,6 +223,45 @@ fieldset input {
 
 .main-right {
   grid-column: 2/3;
+}
+.trending-container {
+  border-left: 10px groove rgb(24, 74, 38);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 470px;
+}
+
+.trending-card {
+  display: flex;
+  max-width: 470px;
+}
+
+.trending-card img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background: rgb(73, 73, 226);
+  margin: 10px;
+}
+.trending-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.trending-card .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.trending-card a {
+  text-decoration: none;
+  color: blue;
+  margin-top: 13px;
 }
 
 /* FOOTER */

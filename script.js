@@ -2,6 +2,7 @@ let newBookForm = document.querySelector("#new-book-form");
 let formContainer = document.querySelector(".form-container");
 let deleteContainer = document.querySelector(".delete-container");
 let noButton = document.querySelector(".no-button");
+let yesButton= document.querySelector(".yes-button");
 let addCard = document.querySelector(".add-card");
 let formCloseButton = document.querySelector(".x-button");
 
@@ -75,12 +76,17 @@ document.querySelectorAll(".delete-button").forEach((button) => {
     deleteContainer.classList.remove("hide");
   });
 });
-
+//NO BUTTON ON DELETE CONTAINER
 noButton.addEventListener("click", () => {
   console.log("NO");
   document.querySelector(".delete-container").classList.add("hide");
 });
+//YES BUTTON ON DELETE container
 
+yesButton.addEventListener("click", () => {
+  console.log("YES DELETE THIS BOOK")
+  document.querySelector(".delete-container").classList.add("hide");
+})
 //SUBMIT BUTTON ON FORM CONTAINER
 newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();

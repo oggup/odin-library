@@ -106,6 +106,17 @@ fieldset input {
   padding: 10px;
   border-radius: 10px;
 }
+.options {
+  display: flex;
+  gap: 20px;
+}
+.delete-container button {
+  width: 100px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid rgb(46, 39, 139);
+  cursor: pointer;
+}
 .hide {
   display: none;
 }

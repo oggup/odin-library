@@ -31,15 +31,15 @@ function addBookToLibrary(book) {
   let deleteButton = document.createElement("img");
   editButton.setAttribute("src", "edit.png");
   editButton.classList.add("edit-button");
-  editButton.addEventListener("click",()=>{
-    console.log("EDIT ME")
-  })
+  editButton.addEventListener("click", () => {
+    console.log("EDIT ME");
+  });
   deleteButton.setAttribute("src", "delete.png");
-  deleteButton.classList.add("delete-button")
-  deleteButton.addEventListener("click",()=>{
-    console.log("DELETE ME")
+  deleteButton.classList.add("delete-button");
+  deleteButton.addEventListener("click", () => {
+    console.log("DELETE ME");
     deleteContainer.classList.remove("hide");
-  })
+  });
   buttonsDiv.classList.add("card-buttons");
   buttonsDiv.appendChild(editButton);
   buttonsDiv.appendChild(deleteButton);

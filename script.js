@@ -118,6 +118,8 @@ function addBookToLibrary(book) {
   document.querySelector(".book-container div:first-child").after(bookCard);
 }
 
+
+
 //ADD CARD BUTTON
 addCard.addEventListener("click", (e) => {
   addCard.classList.add("active");
